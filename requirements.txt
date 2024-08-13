@@ -22,7 +22,7 @@ speedtest-cli
 spotipy
 tgcrypto
 urllib3
-git+https://github.com/KurimuzonAkuma/pyrogram@aa9b1072e4e4106bbd463c09642a419e5081f2bf
+git+https://github.com/KurimuzonAkuma/pyrogram@dev
 git+https://github.com/yt-dlp/yt-dlp
 git+https://github.com/alexmercerind/youtube-search-python@main
 git+https://github.com/joetats/youtube_search@master
