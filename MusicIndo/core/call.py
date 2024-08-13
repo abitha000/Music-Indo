@@ -650,11 +650,21 @@ class Call(PyTgCalls):
             await self.five.start()
 
     async def decorators(self):
-        @self.one.on_update(filters.chat_update(ChatUpdate.Status.KICKED | ChatUpdate.Status.LEFT_GROUP))
-        @self.two.on_update(filters.chat_update(ChatUpdate.Status.KICKED | ChatUpdate.Status.LEFT_GROUP))
-        @self.three.on_update(filters.chat_update(ChatUpdate.Status.KICKED | ChatUpdate.Status.LEFT_GROUP))
-        @self.four.on_update(filters.chat_update(ChatUpdate.Status.KICKED | ChatUpdate.Status.LEFT_GROUP))
-        @self.five.on_update(filters.chat_update(ChatUpdate.Status.KICKED | ChatUpdate.Status.LEFT_GROUP))
+        @self.one.on_update(
+            filters.chat_update(ChatUpdate.Status.KICKED | ChatUpdate.Status.LEFT_GROUP)
+        )
+        @self.two.on_update(
+            filters.chat_update(ChatUpdate.Status.KICKED | ChatUpdate.Status.LEFT_GROUP)
+        )
+        @self.three.on_update(
+            filters.chat_update(ChatUpdate.Status.KICKED | ChatUpdate.Status.LEFT_GROUP)
+        )
+        @self.four.on_update(
+            filters.chat_update(ChatUpdate.Status.KICKED | ChatUpdate.Status.LEFT_GROUP)
+        )
+        @self.five.on_update(
+            filters.chat_update(ChatUpdate.Status.KICKED | ChatUpdate.Status.LEFT_GROUP)
+        )
         async def stream_services_handler(_, chat_id: int):
             await self.stop_stream(chat_id)
 
@@ -668,11 +678,21 @@ class Call(PyTgCalls):
                 return
             await self.play(client, update.chat_id)
 
-        @self.one.on_update(filters.call_participant(GroupCallParticipant.Action.UPDATED))
-        @self.two.on_update(filters.call_participant(GroupCallParticipant.Action.UPDATED))
-        @self.three.on_update(filters.call_participant(GroupCallParticipant.Action.UPDATED))
-        @self.four.on_update(filters.call_participant(GroupCallParticipant.Action.UPDATED))
-        @self.five.on_update(filters.call_participant(GroupCallParticipant.Action.UPDATED))
+        @self.one.on_update(
+            filters.call_participant(GroupCallParticipant.Action.UPDATED)
+        )
+        @self.two.on_update(
+            filters.call_participant(GroupCallParticipant.Action.UPDATED)
+        )
+        @self.three.on_update(
+            filters.call_participant(GroupCallParticipant.Action.UPDATED)
+        )
+        @self.four.on_update(
+            filters.call_participant(GroupCallParticipant.Action.UPDATED)
+        )
+        @self.five.on_update(
+            filters.call_participant(GroupCallParticipant.Action.UPDATED)
+        )
         async def participants_change_handler(client, update: Update):
             if not isinstance(update, JoinedGroupCallParticipant) and not isinstance(
                 update, LeftGroupCallParticipant
